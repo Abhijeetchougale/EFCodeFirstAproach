@@ -1,0 +1,43 @@
+﻿@model ProductAndCategory.Models.Category
+
+@{
+    ViewBag.Title = "delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Delete </h1>
+
+
+<div>
+    <h2>Category</h2>
+    <br />
+    <table class="form-control">
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.CategoryId)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.CategoryId)
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </td>
+
+            <td>
+                @Html.DisplayFor(model => model.CategoryName)
+            </td>
+
+    </table>
+
+
+    <div>
+        <input type="submit" value="Delete" class="btn btn-primary" /> |
+
+    </div>
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>

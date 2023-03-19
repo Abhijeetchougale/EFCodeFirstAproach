@@ -1,0 +1,47 @@
+﻿@model PagedList.IPagedList<ProductAndCategory.Models.Product>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="table-responsive">
+    <table class="table table-light table-bordered">
+        <tr>
+            <th>Product Id</th>
+            <th>Product Name</th>
+            <th>Category Id</th>
+            <th>Category Name</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ProductId</td>
+                <td>@item.ProductName</td>
+                <td>@item.CategoryId</td>
+                <td>@item.CategoryName</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ProductId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ProductId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ProductId })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+<br />
+<br />
+<div class="container mt-3">
+        <div class="pagination" style="margin-left: 400px" >
+
+            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+            of @Model.PageCount   @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+
+        </div>
+    </div>
+

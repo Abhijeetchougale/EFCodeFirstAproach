@@ -1,0 +1,35 @@
+﻿@model ProductAndCategory.Models.Category
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div>
+    <h1>Category Details</h1>
+    <br />
+    <table class="table">
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.CategoryId)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.CategoryId)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.CategoryName)
+            </td>
+        </tr>
+
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

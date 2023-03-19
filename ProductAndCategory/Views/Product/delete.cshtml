@@ -1,0 +1,57 @@
+﻿@model ProductAndCategory.Models.Product
+
+@{
+    ViewBag.Title = "delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>delete</h2>
+
+<div>
+
+    <table class="dl-horizontal">
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.ProductId)
+            </td>
+
+            <td>
+                @Html.DisplayFor(model => model.ProductId)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.Category.CategoryName)
+            </td>
+
+            <td>
+                @Html.DisplayFor(model => model.Category.CategoryName)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </td>
+
+            <td>
+                @Html.DisplayFor(model => model.ProductName)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </td>
+
+            <td>
+                @Html.DisplayFor(model => model.CategoryName)
+            </td>
+        </tr>
+    </table>
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-primary"  /> |
+        
+    </div>
+
+  
+</div>
