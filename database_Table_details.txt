@@ -1,0 +1,13 @@
+create table category
+(
+CategoryId int primarykey,
+CategoryName varchar(50) not null,
+);
+
+create table Product
+(
+ProductId int primarykey,
+ProductName varchar(50) not null,
+CategoryId int foreign key reference as Category(CategoryId),
+CategoryName varchar(50) not null
+);
